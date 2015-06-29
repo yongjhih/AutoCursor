@@ -1,2 +1,2 @@
-include 'auto-parcel', 'auto-parcel-processor', ':sample'
-rootProject.name = 'auto-parcel-parent'
+include 'auto-cursor', 'auto-cursor-processor', ':auto-cursor-sample'
+rootProject.name = 'auto-cursor-parent'

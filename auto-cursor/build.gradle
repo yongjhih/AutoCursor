@@ -1,0 +1,11 @@
+apply plugin: 'java'
+
+targetCompatibility = '1.6'
+sourceCompatibility = '1.6'
+
+tasks.withType(Test) {
+  testLogging {
+    exceptionFormat "full"
+    events "passed", "skipped", "failed"
+  }
+}
