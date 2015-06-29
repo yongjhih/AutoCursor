@@ -16,6 +16,7 @@ package $pkg;
 #foreach ($i in $imports)
 import $i;
 #end
+import android.database.Cursor;
 
 ${gwtCompatibleAnnotation}
 final class $subclass$formalTypes extends $origClass$actualTypes {
@@ -27,6 +28,27 @@ final class $subclass$formalTypes extends $origClass$actualTypes {
 #end
 
 ## Constructor
+
+  $subclass(Cursor cursor) {
+
+#foreach ($p in $props)
+  #if ($p.kind == "FLOAT")
+    this.$p = get(cursor, "$p.column", (Float) null);
+  #elseif ($p.kind == "DOUBLE")
+    this.$p = get(cursor, "$p.column", (Double) null);
+  #elseif ($p.kind == "LONG")
+    this.$p = get(cursor, "$p.column", (Long) null);
+  #elseif ($p.kind == "BOOLEAN")
+    this.$p = get(cursor, "$p.column", (Boolean) null);
+  #elseif ($p.kind == "SHORT")
+    this.$p = cursor.getShort(cursor.getColumnIndex("$p.column"));
+## elseif ($p.kind == "ARRAY")
+## //    this.$p = cursor.getBlob(cursor.getColumnIndex($p.column));
+  #elseif (!$p.kind.primitive)
+    this.$p = get(cursor, "$p.column", ($p.type) null);
+  #end
+#end
+  }
 
 #if ($builderTypeName != "")
   private ##
@@ -325,4 +347,37 @@ final class $subclass$formalTypes extends $origClass$actualTypes {
     }
   }
 #end
+
+  public static String get(Cursor cursor, String key, String defValue) {
+    return cursor.getString(cursor.getColumnIndex(key));
+  }
+
+  public static Integer get(Cursor cursor, String key, Integer defValue) {
+    return cursor.getInt(cursor.getColumnIndex(key));
+  }
+
+  public static Long get(Cursor cursor, String key, Long defValue) {
+    return cursor.getLong(cursor.getColumnIndex(key));
+  }
+
+  public static Float get(Cursor cursor, String key, Float defValue) {
+    return cursor.getFloat(cursor.getColumnIndex(key));
+  }
+
+  public static Double get(Cursor cursor, String key, Double defValue) {
+    return cursor.getDouble(cursor.getColumnIndex(key));
+  }
+
+  public static Boolean get(Cursor cursor, String key, Boolean defValue) {
+    return cursor.getInt(cursor.getColumnIndex(key)) > 0;
+  }
+
+  public static byte[] getBlob(Cursor cursor, String key, byte[] defValue) {
+    return cursor.getBlob(cursor.getColumnIndex(key));
+  }
+
+  public static short getShort(Cursor cursor, String key, short defValue) {
+    return cursor.getShort(cursor.getColumnIndex(key));
+  }
+
 }

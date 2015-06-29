@@ -174,18 +174,22 @@ public class AutoCursorProcessor extends AbstractProcessor {
     private final String identifier;
     private final ExecutableElement method;
     private final String type;
+    private String column;
     private final ImmutableList<String> annotations;
+    private final ProcessingEnvironment processingEnv;
 
     Property(
         String name,
         String identifier,
         ExecutableElement method,
         String type,
-        TypeSimplifier typeSimplifier) {
+        TypeSimplifier typeSimplifier, ProcessingEnvironment processingEnv) {
       this.name = name;
       this.identifier = identifier;
       this.method = method;
       this.type = type;
+      this.column = name;
+      this.processingEnv = processingEnv;
       this.annotations = buildAnnotations(typeSimplifier);
     }
 
@@ -200,9 +204,20 @@ public class AutoCursorProcessor extends AbstractProcessor {
           // implementation.
           continue;
         }
+
+        if (isAutoCursorColumn(processingEnv, annotationMirror)) {
+          AutoCursor.Column columnAnnotation = method.getAnnotation(AutoCursor.Column.class);
+          String[] names = columnAnnotation.name();
+
+          column = name;
+          if (names.length > 0) {
+            column = names[0];
+          }
+        } else {
         // TODO(user): we should import this type if it is not already imported
         AnnotationOutput annotationOutput = new AnnotationOutput(typeSimplifier);
         builder.add(annotationOutput.sourceFormForAnnotation(annotationMirror));
+        }
       }
 
       return builder.build();
@@ -247,6 +262,10 @@ public class AutoCursorProcessor extends AbstractProcessor {
 
     public String getType() {
       return type;
+    }
+
+    public String getColumn() {
+      return column;
     }
 
     public TypeKind getKind() {
@@ -461,7 +480,7 @@ public class AutoCursorProcessor extends AbstractProcessor {
       String propertyType = typeSimplifier.simplify(method.getReturnType());
       String propertyName = methodToPropertyName.get(method);
       String identifier = methodToIdentifier.get(method);
-      props.add(new Property(propertyName, identifier, method, propertyType, typeSimplifier));
+      props.add(new Property(propertyName, identifier, method, propertyType, typeSimplifier, processingEnv));
     }
     // If we are running from Eclipse, undo the work of its compiler which sorts methods.
     eclipseHack().reorderProperties(props);
@@ -714,4 +733,23 @@ public class AutoCursorProcessor extends AbstractProcessor {
   private EclipseHack eclipseHack() {
     return new EclipseHack(processingEnv);
   }
+
+  private static boolean isAutoCursorColumn(TypeElement type) {
+    return type.getAnnotation(AutoCursor.Column.class) != null;
+  }
+
+  private boolean isAutoCursorColumn(AnnotationMirror annotation) {
+    return isAutoCursorColumn(processingEnv, annotation);
+  }
+
+  private static boolean isAutoCursorColumn(ProcessingEnvironment processingEnv, AnnotationMirror annotation) {
+    TypeMirror autoJsonField = getTypeMirror(processingEnv, AutoCursor.Column.class);
+    TypeMirror field = annotation.getAnnotationType();
+    return processingEnv.getTypeUtils().isSameType(field, autoJsonField);
+  }
+
+  private static TypeMirror getTypeMirror(ProcessingEnvironment processingEnv, Class<?> c) {
+    return processingEnv.getElementUtils().getTypeElement(c.getCanonicalName()).asType();
+  }
+
 }

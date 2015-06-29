@@ -84,4 +84,17 @@ public @interface AutoCursor {
   @Target(ElementType.METHOD)
   public @interface Validate {
   }
+
+  @Retention(RetentionPolicy.SOURCE)
+  @Target(ElementType.METHOD)
+  public @interface Column { // for de/serialization
+    /**
+     * The name(s) of this field in JSON. Use an array if this could be represented by multiple names.
+     * Note that using this field will override the enclosing JsonObject's fieldNamingPolicy.
+     */
+    String[] name() default {};
+
+    /** The TypeConverter that will be used to parse/serialize this variable. */
+    Class typeConverter() default void.class;
+  }
 }

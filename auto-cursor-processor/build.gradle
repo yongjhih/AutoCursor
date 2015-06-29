@@ -1,4 +1,5 @@
 apply plugin: 'java'
+apply from: file('deploy.gradle')
 
 targetCompatibility = '1.6'
 sourceCompatibility = '1.6'

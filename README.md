@@ -26,7 +26,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.github.yongjhih.RxMediaStore:auto-cursor:1.0.0'
+    compile 'com.github.yongjhih.AutoCursor:auto-cursor:1.0.0'
 }
 ```
 
