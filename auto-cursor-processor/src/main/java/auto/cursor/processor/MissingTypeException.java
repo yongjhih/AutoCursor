@@ -22,7 +22,6 @@ package auto.cursor.processor;
  * processing, so we should reattempt the processing of the class in a later annotation processing
  * round.
  *
- * @author Éamonn McManus
  */
 @SuppressWarnings("serial")
 class MissingTypeException extends RuntimeException {

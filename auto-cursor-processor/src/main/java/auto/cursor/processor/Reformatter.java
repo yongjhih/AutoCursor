@@ -4,7 +4,6 @@ package auto.cursor.processor;
  * Postprocessor that runs over the output of the template engine in order to make it look nicer.
  * Mostly, this involves removing surplus horizontal and vertical space.
  *
- * @author emcmanus@google.com (Éamonn McManus)
  */
 class Reformatter {
   static String fixup(String s) {

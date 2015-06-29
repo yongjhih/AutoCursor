@@ -1,4 +1,6 @@
 apply plugin: 'java'
+
+ext.artifactId = 'auto-cursor-processor'
 apply from: file('deploy.gradle')
 
 targetCompatibility = '1.6'

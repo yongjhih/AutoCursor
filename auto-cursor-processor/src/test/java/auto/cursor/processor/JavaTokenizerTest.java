@@ -7,7 +7,6 @@ import java.io.StringReader;
 /**
  * Unit tests for {@link JavaTokenizer}.
  *
- * @author emcmanus@google.com (Éamonn McManus)
  */
 public class JavaTokenizerTest extends TestCase {
   public void testSimple() {

@@ -29,7 +29,6 @@ import javax.lang.model.type.TypeMirror;
 /**
  * A set of TypeMirror objects.
  *
- * @author emcmanus@google.com (Éamonn McManus)
  */
 class TypeMirrorSet extends AbstractSet<TypeMirror> {
   private final Set<Equivalence.Wrapper<TypeMirror>> wrappers =

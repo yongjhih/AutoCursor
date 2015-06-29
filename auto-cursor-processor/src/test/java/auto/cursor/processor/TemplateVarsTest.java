@@ -14,7 +14,6 @@ import java.util.List;
 /**
  * Tests for FieldReader.
  *
- * @author emcmanus@google.com (Éamonn McManus)
  */
 public class TemplateVarsTest extends TestCase {
   static class HappyVars extends TemplateVars {

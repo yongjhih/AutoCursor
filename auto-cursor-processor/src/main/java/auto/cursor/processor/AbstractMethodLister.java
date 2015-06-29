@@ -29,7 +29,6 @@ import java.lang.reflect.Modifier;
 /**
  * A class file parser that lists the no-arg abstract methods in a class.
  *
- * @author Éamonn McManus
  */
 class AbstractMethodLister {
   private final InputStream inputStream;

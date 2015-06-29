@@ -63,7 +63,6 @@ import javax.tools.ToolProvider;
 /**
  * Tests for {@link TypeSimplifier}.
  *
- * @author emcmanus@google.com (Éamonn McManus)
  */
 public class TypeSimplifierTest extends TestCase {
   private static final ImmutableMap<String, String> CLASS_TO_SOURCE = ImmutableMap.of(

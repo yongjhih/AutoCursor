@@ -56,7 +56,6 @@ import javax.tools.Diagnostic;
  * <p>
  * @see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=300408">Eclipse bug 300408</a>
  *
- * @author Éamonn McManus
  */
 class EclipseHack {
   private final ProcessingEnvironment processingEnv;

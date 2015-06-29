@@ -36,7 +36,6 @@ import java.util.Deque;
  * each class, in the order they were found. If com.example.Foo contains a nested class Bar, then
  * there will be an entry for "com.example.Foo.Bar" in this Map.
  *
- * @author emcmanus@google.com (Éamonn McManus)
  */
 final class AbstractMethodExtractor {
   AbstractMethodExtractor() { }

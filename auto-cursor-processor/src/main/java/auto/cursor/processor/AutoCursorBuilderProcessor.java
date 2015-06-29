@@ -38,7 +38,6 @@ import javax.tools.Diagnostic;
  * nested inside an {@code @AutoCursor} class. The actual code generation for builders is done in
  * {@link AutoCursorProcessor}.
  *
- * @author Éamonn McManus
  */
 @AutoService(Processor.class)
 public class AutoCursorBuilderProcessor extends AbstractProcessor {

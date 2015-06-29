@@ -39,7 +39,6 @@ import auto.cursor.processor.AutoCursorProcessor;
  * loader sees a different copy of Velocity (even if it is the same version) then Velocity will
  * fail to initialize.
  *
- * @author emcmanus@google.com (Éamonn McManus)
  */
 public class VelocityClassLoaderTest extends TestCase {
   /**

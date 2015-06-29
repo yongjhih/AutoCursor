@@ -9,7 +9,6 @@ import java.util.List;
 /**
  * Tests for {@link AbstractMethodLister}.
  *
- * @author Éamonn McManus
  */
 public class AbstractMethodListerTest extends TestCase {
   /** Test class for the abstractNoArgMethods() test cases. */

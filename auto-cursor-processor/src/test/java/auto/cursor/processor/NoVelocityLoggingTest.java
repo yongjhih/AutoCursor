@@ -27,7 +27,6 @@ import javax.tools.JavaFileObject;
  * behaviour.
  *
  * @see <a href="https://github.com/google/auto/issues/151">Issue 151</a>
- * @author emcmanus@google.com (Éamonn McManus)
  */
 public class NoVelocityLoggingTest extends TestCase {
   public void testDontLog() throws IOException {

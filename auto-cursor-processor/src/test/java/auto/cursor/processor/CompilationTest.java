@@ -47,7 +47,6 @@ import auto.cursor.processor.AutoCursorBuilderProcessor;
 import auto.cursor.processor.AutoCursorProcessor;
 
 /**
- * @author emcmanus@google.com (Éamonn McManus)
  */
 public class CompilationTest extends TestCase {
   public void testCompilation() {

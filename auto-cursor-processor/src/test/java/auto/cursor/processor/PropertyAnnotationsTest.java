@@ -15,7 +15,6 @@ import javax.tools.JavaFileObject;
 /**
  * Tests to ensure annotations are kept on AutoCursor generated classes
  *
- * @author jmcampanini
  */
 public class PropertyAnnotationsTest extends TestCase {
 

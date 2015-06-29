@@ -5,7 +5,6 @@ import junit.framework.TestCase;
 /**
  * Unit tests for {@link Reformatter}.
  *
- * @author emcmanus@google.com (Éamonn McManus)
  */
 public class ReformatterTest extends TestCase {
   public void testSimple() {

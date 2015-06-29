@@ -41,7 +41,6 @@ import javax.tools.JavaFileObject;
  * Generates GWT serialization code for {@code @AutoCursor} classes also marked
  * {@code @GwtCompatible(serializable = true)}.
  *
- * @author Éamonn McManus
  */
 class GwtSerialization {
   private final GwtCompatibility gwtCompatibility;

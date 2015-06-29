@@ -21,7 +21,6 @@ package auto.cursor.processor;
  * one should explicitly be emitted or it should be clear that the compiler will be producing its
  * own error for other reasons.
  *
- * @author emcmanus@google.com (Éamonn McManus)
  */
 @SuppressWarnings("serial")
 class AbortProcessingException extends RuntimeException {

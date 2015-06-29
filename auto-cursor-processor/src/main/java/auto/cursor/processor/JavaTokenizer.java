@@ -27,7 +27,6 @@ import java.io.Reader;
  * using such a pair in the name of one of the abstract methods we are looking for that should not
  * matter.
  *
- * @author Éamonn McManus
  */
 class JavaTokenizer {
   private final Reader reader;

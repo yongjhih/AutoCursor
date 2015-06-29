@@ -34,8 +34,6 @@ import java.lang.annotation.Target;
  *     abstract int id();
  *   }</pre>
  *
- * @author Éamonn McManus
- * @author Kevin Bourrillion
  * @see <a href="https://github.com/frankiesardo/auto.cursor">AutoCursor User's Guide</a>
  */
 @Retention(RetentionPolicy.SOURCE)
@@ -67,7 +65,6 @@ public @interface AutoCursor {
    *
    * <p><b>This API is provisional and subject to change.</b></p>
    *
-   * @author Éamonn McManus
    */
   @Retention(RetentionPolicy.SOURCE)
   @Target(ElementType.TYPE)

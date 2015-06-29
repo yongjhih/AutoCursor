@@ -45,7 +45,6 @@ import org.apache.velocity.runtime.resource.ResourceCacheImpl;
  * same package as this class. They cannot be primitive or null, so that there is a clear indication
  * when a field has not been set.
  *
- * @author Éamonn McManus
  */
 abstract class TemplateVars {
   abstract SimpleNode parsedTemplate();

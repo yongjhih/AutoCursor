@@ -25,7 +25,6 @@ import javax.tools.Diagnostic;
  * Handle error reporting for an annotation processor.
  *
  * @see com.felipecsl.auto.cursor.mutable.AutoCursor
- * @author Éamonn McManus
  */
 class ErrorReporter {
   private final Messager messager;

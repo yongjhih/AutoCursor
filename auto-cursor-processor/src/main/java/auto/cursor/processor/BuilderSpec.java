@@ -58,7 +58,6 @@ import javax.lang.model.util.Types;
 /**
  * Support for AutoCursor builders.
  *
- * @author Éamonn McManus
  */
 class BuilderSpec {
   private static final Equivalence<TypeMirror> TYPE_EQUIVALENCE = MoreTypes.equivalence();

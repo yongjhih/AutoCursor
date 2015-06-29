@@ -49,7 +49,6 @@ import javax.lang.model.util.Types;
  * Takes a set of types and a package and determines which of those types can be imported, and how
  * to spell any of the types in the set given those imports.
  *
- * @author emcmanus@google.com (Éamonn McManus)
  */
 final class TypeSimplifier {
   /**

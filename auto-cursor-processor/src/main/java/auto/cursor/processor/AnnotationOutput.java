@@ -33,7 +33,6 @@ import javax.tools.Diagnostic;
 /**
  * Handling of default values for annotation members.
  *
- * @author emcmanus@google.com (Éamonn McManus)
  */
 class AnnotationOutput {
   private final TypeSimplifier typeSimplifier;

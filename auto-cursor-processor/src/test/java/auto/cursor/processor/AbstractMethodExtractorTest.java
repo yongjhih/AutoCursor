@@ -9,7 +9,6 @@ import java.io.StringReader;
 /**
  * Tests for {@link AbstractMethodExtractor}.
  *
- * @author Éamonn McManus
  */
 public class AbstractMethodExtractorTest extends TestCase {
   public void testSimple() {

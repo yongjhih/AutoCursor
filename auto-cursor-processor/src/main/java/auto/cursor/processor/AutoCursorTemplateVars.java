@@ -26,7 +26,6 @@ import java.util.SortedSet;
 /**
  * The variables to substitute into the autocursor.vm template.
  *
- * @author emcmanus@google.com (Éamonn McManus)
  */
 @SuppressWarnings("unused")  // the fields in this class are only read via reflection
 class AutoCursorTemplateVars extends TemplateVars {

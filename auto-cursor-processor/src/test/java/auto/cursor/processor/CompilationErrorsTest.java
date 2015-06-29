@@ -45,7 +45,6 @@ import javax.tools.StandardLocation;
 import javax.tools.ToolProvider;
 
 /**
- * @author emcmanus@google.com (Éamonn McManus)
  */
 public class CompilationErrorsTest extends TestCase {
 

@@ -101,7 +101,7 @@ afterEvaluate { project ->
 
     task sourcesJar(type: Jar) {
         classifier = 'sources'
-        from sourceSets.main.java.sourceFiles
+        from sourceSets.main.allSource
     }
 
     artifacts {

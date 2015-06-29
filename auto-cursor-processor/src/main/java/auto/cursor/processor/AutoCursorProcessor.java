@@ -69,7 +69,6 @@ import javax.tools.JavaFileObject;
  * Javac annotation processor (compiler plugin) for value types; user code never references this
  * class.
  *
- * @author Éamonn McManus
  * @see auto.cursor.AutoCursor
  */
 @AutoService(Processor.class)
