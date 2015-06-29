@@ -9,17 +9,4 @@ android:
     - android-22
 
 script:
-  - ./gradlew clean check -Dpre-dex=false
-
-branches:
-  except:
-    - gh-pages
-
-cache:
-  directories:
-    - $HOME/.gradle
-    
-notifications:
-  email: false
-  
-sudo: false
+  - ./gradlew clean assemble
