@@ -41,13 +41,14 @@ final class $subclass$formalTypes extends $origClass$actualTypes {
   #elseif ($p.kind == "BOOLEAN")
     this.$p = get(cursor, "$p.column", (Boolean) null);
   #elseif ($p.kind == "SHORT")
-    this.$p = cursor.getShort(cursor.getColumnIndex("$p.column"));
+    this.$p = getShort(cursor, "$p.column", null);
 ## elseif ($p.kind == "ARRAY")
 ## //    this.$p = cursor.getBlob(cursor.getColumnIndex($p.column));
   #elseif (!$p.kind.primitive)
     this.$p = get(cursor, "$p.column", ($p.type) null);
   #end
 #end
+
   }
 
 #if ($builderTypeName != "")
@@ -349,35 +350,75 @@ final class $subclass$formalTypes extends $origClass$actualTypes {
 #end
 
   public static String get(Cursor cursor, String key, String defValue) {
+    try {
     return cursor.getString(cursor.getColumnIndex(key));
+    } catch (IllegalStateException e) {
+      android.util.Log.e("AutoCursor", "column index not found: " + key);
+      return defValue;
+    }
   }
 
   public static Integer get(Cursor cursor, String key, Integer defValue) {
+    try {
     return cursor.getInt(cursor.getColumnIndex(key));
+    } catch (IllegalStateException e) {
+      android.util.Log.e("AutoCursor", "column index not found: " + key);
+      return defValue;
+    }
   }
 
   public static Long get(Cursor cursor, String key, Long defValue) {
+    try {
     return cursor.getLong(cursor.getColumnIndex(key));
+    } catch (IllegalStateException e) {
+      android.util.Log.e("AutoCursor", "column index not found: " + key);
+      return defValue;
+    }
   }
 
   public static Float get(Cursor cursor, String key, Float defValue) {
+    try {
     return cursor.getFloat(cursor.getColumnIndex(key));
+    } catch (IllegalStateException e) {
+      android.util.Log.e("AutoCursor", "column index not found: " + key);
+      return defValue;
+    }
   }
 
   public static Double get(Cursor cursor, String key, Double defValue) {
+    try {
     return cursor.getDouble(cursor.getColumnIndex(key));
+    } catch (IllegalStateException e) {
+      android.util.Log.e("AutoCursor", "column index not found: " + key);
+      return defValue;
+    }
   }
 
   public static Boolean get(Cursor cursor, String key, Boolean defValue) {
+    try {
     return cursor.getInt(cursor.getColumnIndex(key)) > 0;
+    } catch (IllegalStateException e) {
+      android.util.Log.e("AutoCursor", "column index not found: " + key);
+      return defValue;
+    }
   }
 
   public static byte[] getBlob(Cursor cursor, String key, byte[] defValue) {
+    try {
     return cursor.getBlob(cursor.getColumnIndex(key));
+    } catch (IllegalStateException e) {
+      android.util.Log.e("AutoCursor", "column index not found: " + key);
+      return defValue;
+    }
   }
 
   public static short getShort(Cursor cursor, String key, short defValue) {
+    try {
     return cursor.getShort(cursor.getColumnIndex(key));
+    } catch (IllegalStateException e) {
+      android.util.Log.e("AutoCursor", "column index not found: " + key);
+      return defValue;
+    }
   }
 
 }
