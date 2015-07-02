@@ -12,7 +12,7 @@ List<Image> images = new ArrayList<>();
 while (cursor.moveToNext()) {
     Image image = new Image();
     
-    Long id = cursor.getLongg(cursor.getColumnIndex(_ID));
+    Long id = cursor.getLong(cursor.getColumnIndex(_ID));
     image.setId(id);
     
     // ...
