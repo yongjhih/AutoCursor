@@ -4,6 +4,45 @@
 
 ## Usage
 
+Before:
+
+```java
+List<Image> images = new ArrayList<>();
+
+while (cursor.moveToNext()) {
+    Image image = new Image();
+    
+    Long id = cursor.getLongg(cursor.getColumnIndex(_ID));
+    image.setId(id);
+    
+    // ...
+    
+    images.add(id);
+}
+```
+
+```
+public class Image {
+    Long id;
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    // ...
+}
+```
+
+After:
+
+```java
+List<Image> images = new ArrayList<>();
+
+while (cursor.moveToNext()) {
+    images.add(Image.create(cursor));
+}
+```
+
 ```java
 @AutoCursor
 public abstract class Image implements Parcelable {
