@@ -21,7 +21,7 @@ while (cursor.moveToNext()) {
 }
 ```
 
-```
+```java
 public class Image {
     Long id;
 
