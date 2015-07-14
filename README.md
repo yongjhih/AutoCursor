@@ -1,7 +1,5 @@
 # AutoCursor
 
-[![Join the chat at https://gitter.im/yongjhih/AutoCursor](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/yongjhih/AutoCursor?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
 [![Download](https://api.bintray.com/packages/yongjhih/maven/AutoCursor/images/download.svg) ](https://bintray.com/yongjhih/maven/AutoCursor/_latestVersion)
 [![JitPack](https://img.shields.io/github/tag/yongjhih/AutoCursor.svg?label=JitPack)](https://jitpack.io/#yongjhih/AutoCursor)
 [![Build Status](https://travis-ci.org/yongjhih/AutoCursor.svg)](https://travis-ci.org/yongjhih/AutoCursor)
