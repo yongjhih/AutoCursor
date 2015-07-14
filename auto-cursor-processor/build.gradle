@@ -1,10 +1,16 @@
+group = GROUP
+version = VERSION_NAME
+
 apply plugin: 'java'
 
 ext.artifactId = 'auto-cursor-processor'
-apply from: file('deploy.gradle')
 
 targetCompatibility = '1.6'
 sourceCompatibility = '1.6'
+
+repositories {
+    jcenter()
+}
 
 dependencies {
   compile project(':auto-cursor')
@@ -26,3 +32,5 @@ tasks.withType(Test) {
     events "passed", "skipped", "failed"
   }
 }
+
+apply from: file('deploy.gradle')

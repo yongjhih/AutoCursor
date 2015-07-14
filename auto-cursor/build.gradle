@@ -1,7 +1,19 @@
+group = GROUP
+version = VERSION_NAME
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.2.3'
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.4'
+    }
+}
+
 apply plugin: 'java'
 
 ext.artifactId = 'auto-cursor'
-apply from: file('deploy.gradle')
 
 targetCompatibility = '1.6'
 sourceCompatibility = '1.6'
@@ -12,3 +24,5 @@ tasks.withType(Test) {
     events "passed", "skipped", "failed"
   }
 }
+
+apply from: file('deploy.gradle')
