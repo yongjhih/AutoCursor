@@ -82,18 +82,41 @@ public abstract class Image implements Parcelable {
 via jcenter:
 
 ```gradle
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.4'
+    }
+}
+
+apply plugin: 'com.neenbedankt.android-apt'
+
 repositories {
     jcenter()
 }
 
 dependencies {
     compile 'com.infstory:auto-cursor:1.0.0'
+    apt 'com.infstory:auto-cursor-processor:1.0.0'
 }
 ```
 
 via jitpack.io:
 
 ```gradle
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.4'
+    }
+}
+
+apply plugin: 'com.neenbedankt.android-apt'
+
 repositories {
     maven {
         url "https://jitpack.io"
@@ -101,7 +124,8 @@ repositories {
 }
 
 dependencies {
-    compile 'com.github.yongjhih.AutoCursor:auto-cursor:1.0.0'
+    compile 'com.github.yongjhih.AutoCursor:auto-cursor:-SNAPSHOT'
+    apt 'com.github.yongjhih.AutoCursor:auto-cursor-processor:-SNAPSHOT'
 }
 ```
 
