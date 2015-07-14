@@ -2,6 +2,8 @@
 
 ![](art/auto-cursor.png)
 
+Convert Cursor to model by annotations.
+
 ## Usage
 
 Before:
