@@ -1,5 +1,6 @@
 # AutoCursor
 
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-AutoCursor-green.svg?style=flat)](https://android-arsenal.com/details/1/2138)
 [![Download](https://api.bintray.com/packages/yongjhih/maven/AutoCursor/images/download.svg) ](https://bintray.com/yongjhih/maven/AutoCursor/_latestVersion)
 [![JitPack](https://img.shields.io/github/tag/yongjhih/AutoCursor.svg?label=JitPack)](https://jitpack.io/#yongjhih/AutoCursor)
 [![Build Status](https://travis-ci.org/yongjhih/AutoCursor.svg)](https://travis-ci.org/yongjhih/AutoCursor)
