@@ -22,21 +22,25 @@ while (cursor.moveToNext()) {
     
     Long id = cursor.getLong(cursor.getColumnIndex(_ID));
     image.setId(id);
-    
+    String data = cursor.getLong(cursor.getColumnIndex(DATA));
+    image.setData(data);
+    String bucketDisplayName = cursor.getLong(cursor.getColumnIndex(BUCKET_DISPLAY_NAME));
+    image.setBucketDisplayName(bucketDisplayName);
     // ...
-    
-    images.add(id);
+
+    images.add(image);
 }
 ```
 
 ```java
 public class Image {
     Long id;
+    String data;
+    String bucketDisplayName;
 
     public void setId(Long id) {
         this.id = id;
     }
-
     // ...
 }
 ```
