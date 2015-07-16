@@ -132,7 +132,7 @@ dependencies {
 
 ## Sample
 
-[RxMediaStore](https://github.com/yongjhih/RxMediaStore):
+[yongjhih/RxMediaStore](https://github.com/yongjhih/RxMediaStore):
 
 * https://github.com/yongjhih/RxMediaStore/blob/master/rx-media-store/src/main/java/android/provider/Image.java
 * https://github.com/yongjhih/RxMediaStore/blob/master/rx-media-store/src/main/java/rx/observables/MediaStoreObservable.java
