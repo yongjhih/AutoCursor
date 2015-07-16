@@ -8,7 +8,7 @@
 
 ![](art/auto-cursor.png)
 
-Convert cursor to model/POJO by annotations.
+cursot2model/cursor2pojo. Convert cursor to model/POJO by annotations.
 
 ## Usage
 
