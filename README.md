@@ -157,7 +157,7 @@ for (Image image : Image.iterator(cursor)) {
 Image.observable(cursor).forEach(System.out::println);
 ```
 
-## Integration of RxMediaObserable
+## Integration of [RxMediaStore](https://github.com/yongjhih/RxMediaStore)
 
 ```java
 CursorObseravble.create(cursor).map(c -> Image.create(c));
