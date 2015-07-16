@@ -130,6 +130,10 @@ dependencies {
 }
 ```
 
+## Sample
+
+https://github.com/yongjhih/RxMediaStore/blob/master/rx-media-store/src/main/java/android/provider/Image.java
+
 ## License
 
 ```
