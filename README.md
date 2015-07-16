@@ -141,6 +141,28 @@ dependencies {
 * https://github.com/yongjhih/RxMediaStore/blob/master/rx-media-store/src/main/java/android/provider/Image.java
 * https://github.com/yongjhih/RxMediaStore/blob/master/rx-media-store/src/main/java/rx/observables/MediaStoreObservable.java
 
+## TODO
+
+`.iterator(Cursor)`:
+
+```java
+for (Image image : Image.iterator(cursor)) {
+    System.out.println(image.id());
+}
+```
+
+`Obseravle<T> T.observable(Cursor)`:
+
+```java
+Image.observable(cursor).forEach(System.out::println);
+```
+
+## Integration of RxMediaObserable
+
+```java
+CursorObseravble.create(cursor).map(c -> Image.create(c));
+```
+
 ## License
 
 ```
